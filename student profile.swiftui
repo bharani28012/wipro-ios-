@@ -1,0 +1,42 @@
+import SwiftUI
+
+struct ContentView: View {
+
+    let Text1 = "Bharani.R"
+    let Text2 = "Computer Science and Engineering"
+    let Text3 = "4th year"
+    let num = 7.60
+
+    @State var showDetails = false
+
+    var body: some View {
+
+        VStack {
+
+            Text("STUDENT PROFILE")
+                .font(.largeTitle)
+                .bold()
+
+            Button("Show Message") {
+                showDetails = true
+            }
+            .padding()
+
+            if showDetails {
+
+                Text("Welcome Bharani!")
+                    .font(.title)
+                    .bold()
+
+                Text("Name : \(Text1)")
+
+                Text("Department : \(Text2)")
+
+                Text("Year : \(Text3)")
+
+                Text("CGPA : \(num)")
+            }
+        }
+        .padding()
+    }
+}
