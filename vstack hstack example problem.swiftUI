@@ -1,0 +1,38 @@
+import SwiftUI
+struct ContentView:View{
+    var body: some View{
+        VStack{
+            Text("STUDENT DASHBOARD")
+            Text("Bharani.R")
+            Text("CSE-4 th year")
+              Text("--------------------------------------------")
+            HStack{
+                Text("Tamil")
+                Spacer()
+                Text("85")
+            }
+             HStack{
+                Text("English")
+                Spacer()
+                Text("95")
+            }
+             HStack{
+                Text("Computer Science")
+                Spacer()
+                Text("100")
+            }
+              Text("--------------------------------------------")
+             HStack{
+                Text("Total")
+                Spacer()
+                Text("280")
+            }
+             HStack{
+                Text("Average")
+                Spacer()
+                Text("93.3")
+            }
+        }
+        .padding()
+    }
+}
