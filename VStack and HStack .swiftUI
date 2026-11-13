@@ -1,0 +1,27 @@
+import SwiftUI
+struct  ContentView:View{
+    var body : View{
+        /*Text("My Profile")
+        .font(.largeTitle)
+        Text("Bharani.R")
+        Text("final year student")*/
+        /*vstack is used to write the content as a stack in an previous it only 
+        display the first text alone it is used to arrange the elments as one by one*/
+        VStack{
+        Text("My Profile")
+        .font(.largeTitle)
+        Spacer()
+        Text("Bharani.R")
+        Spacer()
+        Text("final year student")
+        Spacer()
+        /*HStack is used to arrange the elments as side by side */
+        HStack{
+            Text("technical skills : team work")
+            /* spacer it will add an valuble space*/
+            Spacer()
+            Text("hobies : painting")
+            }
+        }
+    }
+}
