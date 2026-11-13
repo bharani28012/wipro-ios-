@@ -1,0 +1,59 @@
+import SwiftUI
+struct ContentView:View{
+    @State var ShowResult=false
+    let Tamil = 85
+    let English  = 95
+    let ComputerScience = 100
+    var body: some View{
+        VStack{
+            Text("STUDENT DASHBOARD")
+            Text("Bharani.R")
+            Text("CSE-4 th year")
+              Text("--------------------------------------------")
+            HStack{
+                Text("Tamil")
+                Spacer()
+                Text("85")
+            }
+             HStack{
+                Text("English")
+                Spacer()
+                Text("95")
+            }
+             HStack{
+                Text("Computer Science")
+                Spacer()
+                Text("100")
+            }
+              Text("--------------------------------------------")
+             HStack{
+                Text("Total")
+                Spacer()
+                Text("\(Tamil+English+ComputerScience)")
+            }
+             HStack{
+                Text("Average")
+                Spacer()
+                Text("\(Tamil+English+ComputerScience/3)")
+            }
+            Button("SHOW RESULT") {
+                ShowResult = true
+            }
+                .frame(width: 150, height: 45)
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+                if ShowResult {
+                    if (Tamil+English+ComputerScience)/3 >= 50{
+                        Text("PASS")
+                        .foregroundColor(.green)
+                    }else{
+                         Text("FAIL")
+                        .foregroundColor(.green)
+
+                    }
+                }
+        }
+        .padding()
+    }
+}
