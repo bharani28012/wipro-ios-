@@ -1,0 +1,31 @@
+import SwiftUI
+struct ContentView:View{
+    @State var Login = false
+    @State var name = " "
+    @State var department = " "
+    var body:some View{
+        VStack{
+            Text("STUDENT LOGIN")
+            Text("Enter your name")
+            TextField("Enter your name",text:&name )
+            .textFeildStyle(.roundedBorder)
+            Text("Enter your department")
+            TextField("Enter your department",text:$department)
+            .textFeildStyle(.roundedBorder)
+            Button("login"){
+                Login = true
+            }label:{
+                .frame(width:10,height:60)
+                .background(Color.black)
+                .foregroundColor(.blue)
+            }if Login{
+                Text("Welcome \(name)!")
+                Text("Department : \(department)")
+                Text("Login Successful!")
+            }
+
+        }
+    
+    }
+    
+}
