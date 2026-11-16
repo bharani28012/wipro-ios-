@@ -1,0 +1,57 @@
+import SwiftUI
+struct ContentView:View{
+    @State var ShowMessage = false
+    @State var name=""
+    @State var password=""
+    var body:some View{
+        VStack{
+            Text("STUDENT LOGIN")
+            Text("-----------------------------------")
+            Text("Enter your name")
+            TextField("Enter your name",text:($name))
+            Text("Enter your password")
+            SecureField("Enter your password",text:($password))
+                  Text("-----------------------------------")
+            Button("login"){
+                ShowMessage = true
+            }
+            .frame(width:60,height:50)
+            .background(Color.black)
+            .foregroundColor(.blue)
+            .cornerRadius(20)
+            if ShowMessage{
+                if name.isEmpty && password.isEmpty{
+                     VStack{
+                        Text("-----------------------------------")
+                        Text("Name and password feild is empty")
+                        Text("-----------------------------------")
+                    }
+                  
+                }   else if password.isEmpty{
+                    Text("-----------------------------------")
+                    Text("please enter the password")
+                    Text("-----------------------------------")
+                 }else if name.isEmpty {
+                    Text("-----------------------------------")
+                      Text("Name is empty")
+                      Text("-----------------------------------")
+                    
+                 }else{
+                    Text("-----------------------------------")
+                    Text("Welcome \(name)!")
+                    Text("Login successfull")
+                    Text("Username \(name)") 
+                    Text("-----------------------------------")
+                    Button("Logout"){
+                        ShowMessage=false
+                    }
+
+                }
+                .frame(width:60,height:50)
+                .background(Color.balck)
+                .foregroundColor(.blue)
+                .cornerRadius(20)               
+            }
+        }
+    }
+}
