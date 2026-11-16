@@ -1,0 +1,34 @@
+import SwiftUI
+struct ContentView:View{
+    @State var ShowMessage = false
+    @State var name=" "
+    @State var password=" "
+    var body:some View{
+        VStack{
+            Text("STUDENT LOGIN")
+            Text("Enter your name")
+            TextField("Enter your name",text:($name))
+            Text("Enter your password")
+            SecureField("Enter your password",text:($password))
+            Button("login"){
+                ShowMessage = true
+            }
+            .frame(width:60,height:50)
+            .background(Color.black)
+            .foregroundColor(.blue)
+            .cornerRadius(20)
+            if ShowMessage{
+                Text("Welcome \(name)!")
+                Text("Login successfull")
+                Text("Username \(name)") 
+                Button("LOGOUT"){
+
+                }
+                .frame(width:60,height:50)
+                .background(Color.balck)
+                .foregroundColor(.blue)
+                .cornerRadius(20)               
+            }
+        }
+    }
+}
