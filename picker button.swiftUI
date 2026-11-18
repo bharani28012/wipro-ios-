@@ -1,0 +1,35 @@
+import SwifUI
+struct ContentView:View{
+    @State var department ="Computer science"
+    @State var year:Int=4
+    @State var name=""
+    var body:some View{
+            VStack{
+                Text("-----------------------------")
+                Text("Student Registration")
+                TextField("Enter name",text:($name))
+                Text("select department")
+                Picker("select department",selection:$department){
+                    Text("Computer science").tag("Computer science")
+                    Text("Mechanical").tag("Mechanical")
+                    Text("Electronics").tag("Electronics")
+                }
+                 Text("select year")
+                  Picker("select year",selection:$year){
+                    Text("1").tag("1")
+                    Text("2").tag("2")
+                    Text("3").tag("3")
+                    Text("4").tag("4")
+                }
+                Button("submit"){
+
+                }
+                .frame(width:60,height:35)
+                .background(Color.black)
+                .foregroundColor(.blue)
+                .cornerRadius(20)
+                Text("--------------------------------")
+            }
+
+    }
+}
