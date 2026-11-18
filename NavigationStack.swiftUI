@@ -1,0 +1,27 @@
+import SwifUI
+struct ContentView:View{
+    var body:some View{
+        NavigationStack{
+            VStack{
+                Text("-----------------------------")
+                Text("Student App")
+                Text("Welcome")
+                NavigationLink("View my profile"){
+                    VStack{
+                        Text("MY PROFILE")
+                        Text("Bharani.R")
+                        Text("Department: Computer Science")
+                        Text("Year: 4th Year")
+                        Text("CGPA: 7.60")
+                    }
+                }
+                .frame(width:120,height:60)
+                .background(Color.black)
+                .foregroundColor(.blue)
+                .cornerRadius(20)
+                Text("--------------------------------")
+            }
+        }
+
+    }
+}
