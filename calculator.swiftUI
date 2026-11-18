@@ -1,0 +1,236 @@
+import SwiftUI
+struct ContentView:View{
+    @State var Addition=false
+    @State var Subtraction=false
+    @State var Multiplication=false
+    @State var Division=false
+    @State var firstNumber:Int=0
+    @State var SecondNumber:Int=0
+    var body:some View{
+        VStack{
+            Text("MY CALCULATOR")
+            Text("Enter First Number")
+            TextField("first number",value:$firstNumber,format:.number)
+            Text("Enter Second Number")
+            TextField("second number",value:$SecondNumber,format:.number)
+            HStack{
+                Button("add"){
+                    Addition=true
+
+                }
+                .frame(width:56,height:40)
+                .background(Color.black)
+                .foregroundColor(.blue)
+                .cornerRadius(20)
+                if Addition{
+                    VStack{
+                        if firstNumber==0 && SecondNumber==0{
+                            Text("Both feild is empty")
+                             Button("CLEAR"){
+
+                            }
+                        .frame(width:56,height:40)
+                        .background(Color.black)
+                        .foregroundColor(.blue)
+                        .cornerRadius(20)
+                        }
+                        else if firstNumber==0{
+                            Text("Enter the first number")
+                             Button("CLEAR"){
+
+                            }
+                        .frame(width:56,height:40)
+                        .background(Color.black)
+                        .foregroundColor(.blue)
+                        .cornerRadius(20)
+                        }
+                        else if SecondNumber==0{
+                            Text("Enter the Second number")
+                             Button("CLEAR"){
+
+                            }
+                        .frame(width:56,height:40)
+                        .background(Color.black)
+                        .foregroundColor(.blue)
+                        .cornerRadius(20)
+                        }
+                        else{
+                            Text("result = \(firstNumber+SecondNumber)")
+                             Button("CLEAR"){
+
+                            }
+                        .frame(width:56,height:40)
+                        .background(Color.black)
+                        .foregroundColor(.blue)
+                        .cornerRadius(20)
+                        }
+
+                    }
+
+                }
+                 Button("sub"){
+                    Subtraction= true
+
+                }
+                .frame(width:56,height:40)
+                .background(Color.black)
+                .foregroundColor(.blue)
+                .cornerRadius(20)
+                if Subtraction && ShowMessage {
+                    if firstNumber==0 && SecondNumber==0{
+                        Text("Both feild is empty")
+                         Button("CLEAR"){
+
+                        }
+                        .frame(width:56,height:40)
+                        .background(Color.black)
+                        .foregroundColor(.blue)
+                        .cornerRadius(20)
+                    }
+                    else if firstNumber.isEmpty{
+                        Text("Enter the first number")
+                         Button("CLEAR"){
+
+                        }
+                        .frame(width:56,height:40)
+                        .background(Color.black)
+                        .foregroundColor(.blue)
+                        .cornerRadius(20)
+                    }
+                    else if SecondNumber.isEmpty{
+                        Text("Enter the Second number")
+                         Button("CLEAR"){
+
+                        }
+                        .frame(width:56,height:40)
+                        .background(Color.black)
+                        .foregroundColor(.blue)
+                        .cornerRadius(20)
+                    }else{
+                        Text("result = \(firstNumber-SecondNumber)")
+                         Button("CLEAR"){
+
+                        }
+                        .frame(width:56,height:40)
+                        .background(Color.black)
+                        .foregroundColor(.blue)
+                        .cornerRadius(20)
+                    }
+                }
+                 Button("mul"){
+                    Multiplication=true
+
+                }
+                .frame(width:56,height:40)
+                .background(Color.black)
+                .foregroundColor(.blue)
+                .cornerRadius(20)
+                 if Multiplication {
+                    if firstNumber==0 && SecondNumber==0{
+                        Text("Both feild is empty")
+                         Button("CLEAR"){
+
+                        }
+                        .frame(width:56,height:40)
+                        .background(Color.black)
+                        .foregroundColor(.blue)
+                        .cornerRadius(20)
+                    }
+                    else if firstNumber==0{
+                        Text("Enter the first number")
+                         Button("CLEAR"){
+
+                        }
+                        .frame(width:56,height:40)
+                        .background(Color.black)
+                        .foregroundColor(.blue)
+                        .cornerRadius(20)
+                    }
+                    else if SecondNumber==0{
+                        Text("Enter the Second number")
+                         Button("CLEAR"){
+
+                        }
+                        .frame(width:56,height:40)
+                        .background(Color.black)
+                        .foregroundColor(.blue)
+                        .cornerRadius(20)
+                    }else{
+                        Text("result = \(firstNumber*SecondNumber)")
+                         Button("CLEAR"){
+
+                        }
+                        .frame(width:56,height:40)
+                        .background(Color.black)
+                        .foregroundColor(.blue)
+                        .cornerRadius(20)
+                    }
+                }
+                 Button("div"){
+                    Division=true
+                    
+                }
+                .frame(width:56,height:40)
+                .background(Color.black)
+                .foregroundColor(.blue)
+                .cornerRadius(20)
+                 if Division {
+                    if firstNumber==0 && SecondNumber==0{
+                        Text("Both feild is empty")
+                         Button("CLEAR"){
+
+                        }
+                        .frame(width:56,height:40)
+                        .background(Color.black)
+                        .foregroundColor(.blue)
+                        .cornerRadius(20)
+                    }
+                    else if firstNumber==0{
+                        Text("Enter the first number")
+                         Button("CLEAR"){
+
+                        }
+                        .frame(width:56,height:40)
+                        .background(Color.black)
+                        .foregroundColor(.blue)
+                        .cornerRadius(20)
+                    }
+                    else if SecondNumber==0{
+                        Text("Enter the Second number")
+                         Button("CLEAR"){
+
+                        }
+                        .frame(width:56,height:40)
+                        .background(Color.black)
+                        .foregroundColor(.blue)
+                        .cornerRadius(20)
+                    }else{
+                        if(SecondNumber==0){
+                            VStack{
+                                Text("It is an inproper division")
+                                Text("result = \(firstNumber/SecondNumber)")
+                                 Button("CLEAR"){
+
+                                }
+                                .frame(width:56,height:40)
+                                .background(Color.black)
+                                .foregroundColor(.blue)
+                                .cornerRadius(20)
+                            }
+                        }else{
+                            Text("result = \(firstNumber/SecondNumber)")
+                             Button("CLEAR"){
+
+                            }
+                        .frame(width:56,height:40)
+                        .background(Color.black)
+                        .foregroundColor(.blue)
+                        .cornerRadius(20)
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
