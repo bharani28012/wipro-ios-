@@ -1,0 +1,52 @@
+import SwiftUI
+struct ContentView:View{
+    @State var ShowMessage=false
+    @State var ShowMessage1=false
+    @State var name =""
+     let TotalWorkingDays:Int = 100
+    var body:some View{
+        VStack{
+            Text("STUDENT NAME")
+            Text("Enter student name")
+            TextField("Enter name",text:($name))
+            HStack{
+                VStack{
+                    Button("PRESENT"){
+                        ShowMessage=true
+                        ShowMessage1=false
+
+                     }
+                    .frame(width:70,heigth:40)
+                    .background(Color.black)
+                    .foregroundColor(.blue)
+                    .cornerRadius(20)
+                    if ShowMessage{
+                        VStack{
+                            Text("\($name)")
+                            Text("Total working days",text:(TotalWorkingDays))
+                            Text("Attendance Status:")
+                            Text("PRESENT")
+                        }
+                    }
+                }
+                VStack{
+                    Button("ABSENT"){
+                        ShowMessage1=true
+                        ShowMessage=false
+
+                    }
+                    .frame(width:70,heigth:40)
+                    .background(Color.black)
+                    .foregroundColor(.blue)
+                    .cornerRadius(20)
+                    if ShowMessage1{
+                        Text("\($name)")
+                         Text("Total working days",text:(TotalWorkingDays))
+                        Text("Attendance Status:")
+                        Text("ABSENT")
+                    }
+                }
+            }
+        }
+    }
+}
