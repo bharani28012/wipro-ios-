@@ -1,0 +1,125 @@
+import SwiftUI
+struct ContentView:View{
+    @State var selectedFood=""
+    @State var pizza = false
+    @State var burger = false
+    @State var FrenchFries = false
+    @State var Sandwich = false
+    @State var Noodles = false
+    var body:some View{
+        NavigationStack{
+            VStack{
+                Text("FOOD ORDERING APP")
+                .foregroundColor(.red)
+                .font(.system(size:30))
+                .bold()
+                Text(" Welcome !.....   ")
+                 .font(.system(size:30))
+                Text("continue to order food")
+                .font(.system(size:7))
+                NavigationLink ("click"){
+                    ScrollView{
+                        VStack{
+                           Spacer()
+                            Text("Available foods")
+                            .foregroundColor(.black)
+                            .font(.system(size:30))
+                            .bold()
+                            HStack{
+                                Text("🍕  Pizza ")
+                                Spacer()
+                                Text("   ₹150")
+                                Spacer()
+                                Button("add"){
+                                    pizza=true
+                                    selectedFood= "pizza"
+
+                                }
+                                
+                                .frame(width:50,height:40)
+                                .background(Color.black)
+                                .foregroundColor(.red)
+                                .cornerRadius(20)
+                            }
+                             HStack{
+                                Text("🍔  Burger   ")
+                                Spacer()
+                                Text("   ₹100")
+                                Spacer()
+                                 Button("add"){
+                                    burger=true
+                                    selectedFood= "burger"
+                                }
+                                .frame(width:50,height:40)
+                                .background(Color.black)
+                                .foregroundColor(.red)
+                                .cornerRadius(20)
+                            }
+                             HStack{
+                                Text("🍟 French Fries ")
+                                Spacer()
+                                Text("   ₹80")
+                                Spacer()
+                                 Button("add"){
+                                    FrenchFries =true
+                                    selectedFood= "French Fries"
+                                }
+                                .frame(width:50,height:40)
+                                .background(Color.black)
+                                .foregroundColor(.red)
+                                .cornerRadius(20)
+                            }
+                             HStack{
+                                Text("🥪 Sandwich  ")
+                                Spacer()
+                                Text("   ₹120")
+                                Spacer()
+                                 Button("add"){
+                                       Sandwich  =true
+                                    selectedFood= "Sandwich "
+                                }
+                                .frame(width:50,height:40)
+                                .background(Color.black)
+                                .foregroundColor(.red)
+                                .cornerRadius(20)
+                            }
+                             HStack{
+                                Text("🍜  Noodles")
+                                Spacer()
+                                Text("   ₹100")
+                                Spacer()
+                                 Button("add"){
+                                        Noodles=true
+                                    selectedFood= " Noodles"
+                                }
+                                .frame(width:50,height:40)
+                                .background(Color.black)
+                                .foregroundColor(.red)
+                                .cornerRadius(20)
+                            }
+                            VStack{
+                                Text("selected food: \(selectedFood)")
+                                DisclosureGroup("select the qauntity"){
+                                    Text("1")
+                                    Text("2")
+                                    Text("3")
+                                    Text("4")
+                                }
+                            }
+        
+                        }
+                    }
+                }
+                .frame(width:80,height:40)
+                .foregroundColor(.red)
+                .background(Color.black)
+                .cornerRadius(20)
+              
+
+                
+            }
+            
+
+        }
+    }
+}
