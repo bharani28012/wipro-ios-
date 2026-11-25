@@ -1,0 +1,37 @@
+import SwiftUI
+struct ContentView:View{
+    var body :some View{
+        VStack{
+            Text(systemName:"Food menu")
+            Image("🍕")
+            .font(.system(size:70))
+                .resizable()
+                .frame(width:70,height:70)
+                .clipShape(Circle())
+                HStack{
+                    Text("Pizza")
+                    Text("150")
+                }
+                 Image("🍔")
+                .resizable()
+                .frame(width:70,height:70)
+                .scaledToFill()
+                .background(Color.black)
+                HStack{
+                    Text("BURGER")
+                    Text("100")
+                }
+                 Image("🍟")
+                .resizable()
+                .frame(width:70,height:70)
+                .scaledToFill()
+                .background(Color.brown)
+                .cornerRadius(20)
+                HStack{
+                    Text("French fries")
+                    Text("80")
+                }
+            
+        }
+    }
+}
