@@ -1,0 +1,63 @@
+impor SwiftUI
+struct ContentView:View{
+    @State var samrtphone=false
+    @State var headphone=false
+    @State var samrtwatch=false
+    var body: some View{
+        NavigationStack{
+            VStack{
+                Text("My shopping app")
+                Text("Welcome")
+                NavigationLink("Available Products"){
+                    HStack{
+                        VStack{
+                            Image(systemName:"📱")
+                            .resizable()
+                            .frame(width:50,height:50)
+                            .clipShape(Circle())
+                            Text("SMARTPHONE")
+                            Text("Price: 15000")
+                            Button("BUY NOW"){
+                                samrtphone=true
+                            }
+                             .alert("samrt phone is added to cart",isPresented:$samrtphone)
+                          
+                        }
+                        VStack{
+                            Image(systemName:"🎧")
+                            .resizable()
+                            .frame(width:80,height:50)
+                            .clipShape(Circle())
+                            Text("HEADPHONE")
+                            Text("Price: 1500")
+                            Button("BUY NOW"){
+                                headphone=true
+                            }
+                             .alert("head phone is added to cart",isPresented:$headphone)
+                           
+                        }
+                        VStack{
+                            Image(systemName:"⌚")
+                            .resizable()
+                            .frame(width:50,height:50)
+                            .clipShape(Circle())
+                            Text("SMARTWATCH")
+                            Text("Price: 2000")
+                            Button("BUY NOW"){
+                                samrtwatch=true
+                            }
+                      
+                            .alert("samrt watch is added to cart",isPresented:$samrtwatch)
+                        }
+                    }
+
+                }
+                .frame(width:200,height:50)
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(20)
+            }
+
+        }
+    }
+}
