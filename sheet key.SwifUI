@@ -1,0 +1,25 @@
+import SwiftUI
+
+struct ContentView: View {
+    @State var showSheet = false
+
+    var body: some View {
+        VStack {
+            Text("FOOD ORDERING APP")
+
+            Button("View Food Details") {
+                showSheet = true
+            }
+            .sheet(isPresented: $showSheet) {
+                VStack {
+                    Text("PIZZA DETAILS")
+                    Text("Price: ₹150")
+
+                    Button("Close") {
+                        showSheet = false
+                    }
+                }
+            }
+        }
+    }
+}
