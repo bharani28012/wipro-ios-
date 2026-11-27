@@ -1,0 +1,102 @@
+import SwiftUI
+struct ContentView:View{
+    @State var showDetails=false
+    @State var showDetails1=false
+    @State var showDetails2=false
+    var body:some View{
+        NavigationStack{
+            VStack{
+                Text("ONLINE COURSE APP")
+                Image(" 🎓")
+                .resizable()
+                .frame(width:80,height:80)
+                .background(Color.black)
+                .clipShape(Circle())
+                Text("Welcome students!")
+                NavigationLink("Available Courses"){
+                    VStack{
+                        Text("AVAILABLE COURSES")
+                        .bold()
+                        HStack{
+                            Text("java programing")
+                            .foregroundColor(.red)
+                            Text("500")
+                            Button("View courses details"){
+                                showDetails=true
+                            }
+                            .sheet(isPresented:$showDetails){
+                                VStack{
+                                    Text("COURSE DETAILS")
+                                    .bold()
+                                    Text("java programming")
+                                    Text("Price:700")
+                                    Text("Duration:30 days")
+                                    Text("level:Beginner")
+                                    Button("ENROLL NOW"){
+
+                                    }
+                                    Button("close"){
+                                        showDetails=false
+                                    }
+                                }
+                            }
+                        }
+                       
+                        HStack{
+                         Text("SwiftUI Development")
+                        .foregroundColor(.red)
+                        Text("700")
+                         Button("View courses details"){
+                            showDetails1=true
+                        }
+                        .sheet(isPresented:$showDetails1){
+                        VStack{
+                        Text("COURSE DETAILS")
+                        .bold()
+                        Text("SwiftUI Development")
+                        Text("Price:700")
+                        Text("Duration:30 days")
+                        Text("level:Beginner")
+                        Button("ENROLL NOW"){
+
+                        }
+                        Button("close"){
+                            showDetails1=false
+                        }
+                        }
+                        }
+                        }
+                     
+                        HStack{
+                         Text("Web Development")
+                        .foregroundColor(.red)
+                        Text("400")
+                         Button("View courses details"){
+                            showDetails2=true
+                        }
+                        .sheet(isPresented:$showDetails2){
+                        VStack{
+                        Text("COURSE DETAILS")
+                        .bold()
+                        Text("Web development")
+                        Text("Price:700")
+                        Text("Duration:30 days")
+                        Text("level:Beginner")
+                        Button("ENROLL NOW"){
+
+                        }
+                        Button("close"){
+                            showDetails2=false
+                        }
+                        }
+                        }
+                        }
+
+                    }
+                }
+            }
+
+        }
+
+    }
+}
