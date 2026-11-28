@@ -1,0 +1,31 @@
+import SwiftUI
+struct ContentView:View{
+    @State var showsheet=false
+    @State var Quantity=0
+    var body :some View{
+        VStack{
+            Text("YOUR ORDER")
+            .bold()
+            Text("Margherita")
+            HStack{
+                Text("Price :")
+                Spacer()
+                Text("150")
+            }
+             Stepper("Quantity:\(Quantity)",value:$Quantity,in:1...10)
+             Text("Total Amount:\(150*Quantity)")
+             Button("place order"){
+                showsheet=true
+             }
+             .sheet(isPresented:$showsheet){
+                VStack{
+                    Text("Order Successful!")
+                    Text("Your pizza is ordered!")
+                }
+             }
+
+
+        }
+
+    }
+}
