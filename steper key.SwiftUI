@@ -1,0 +1,11 @@
+import SwiftUI
+struct ContentView:View{
+    @State var Quantity=1
+    var body:some View{
+        VStack{
+            Text("FOOD ORDERING APP")
+            Stepper("quantity:\(Quantity)",value:$Quantity,in:1......60)
+
+        }
+    }
+}
